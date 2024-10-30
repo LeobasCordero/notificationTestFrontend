@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { fetchUsers, User } from '../../services/userService';
+import { fetchUsers } from '../../services/userService';
+import User from '../../models/User';
 
 interface UserSelectProps {
-    onChangeUser: (categoryId: number) => void;
+    onChangeUser: (user: User) => void;
 }
 
 
@@ -26,7 +27,10 @@ const UserSelect: React.FC<UserSelectProps> = ({ onChangeUser }) => {
     const handleSelectChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
         const selectedId = Number(event.target.value);
         setSelectedUser(selectedId);
-        onChangeUser(selectedId);
+        const selectedUserObj = users.find(user => user.userId === selectedId);
+        if (selectedUserObj) {
+            onChangeUser(selectedUserObj);
+        }
     };
 
 

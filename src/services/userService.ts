@@ -1,9 +1,5 @@
 import api from './api'
-
-export interface User {
-    userName: string;
-    userId: number;
-}
+import User from '../models/User'
 
 // Fetch from backend
 export const fetchUsers = async (): Promise<User[]> => {
