@@ -38,7 +38,6 @@ const CategorySelect: React.FC<CategorySelectProps> = ({ userId, onCategoryChang
 
     return (
         <div className='category-select'>
-            <label htmlFor="categorySelect">Category:</label>
             <select id="categorySelect" value={selectedCategory} onChange={handleSelectChange}>
                 <option value="">Select a category</option>
                 {categories.map((category) => (

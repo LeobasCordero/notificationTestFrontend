@@ -8,3 +8,17 @@
     background-color: $bg;
     color: $text;
 }
+
+@mixin button-style($background-color, $color) {
+    background-color: $background-color;
+    color: $color;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  
+    &:hover {
+      background-color: darken($background-color, 10%);
+    }
+  }

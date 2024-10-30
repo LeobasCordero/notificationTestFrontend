@@ -5,12 +5,28 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: $font-family;
     background-color: $background-light;
     color: $primary-color;
     font-size: $font-size-base;
+    line-height: 1.6;
 }
 
 textarea {
     resize: none;
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
 }

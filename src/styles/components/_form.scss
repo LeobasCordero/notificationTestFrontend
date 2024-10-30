@@ -1,54 +1,55 @@
-/*.form {
-    background-color: aquamarine;
-    color: var(--primary-text-color);
+.form-container {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 70%;
+    margin: 0 auto;
 }
 
-.send-button {
-    background-color: var(--button-bg-color);
+.form-header {
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
 }
-    */
 
-    .form-container {
-        background-color: #f8f9fa;
-        padding: 20px;
-        border-radius: 8px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        max-width: 600px;
-        margin: 0 auto;
+.form-group {
+    margin-bottom: 15px;
+}
+
+.textarea {
+    width: 50%;
+    padding: $padding;
+    font-size: $font-size;
+    color: $text-color;
+    background-color: $bg-color;
+    border: 1px solid $border-color;
+    border-radius: $radius;
+    resize: vertical;
+    transition: border-color 0.3s ease;
+  
+    &:focus {
+      border-color: $border-color-focus;
+      outline: none;
     }
-    
-    .form-header {
-        color: #333;
-        margin-bottom: 20px;
-        text-align: center;
+  
+    &::placeholder {
+      color: $placeholder-color;
     }
-    
-    .form-group {
-        margin-bottom: 15px;
-    }
-    
-    .textarea {
-        width: 100%;
-        padding: 10px;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        font-size: 16px;
-        resize: none;
-    }
-    
-    .button-container {
-        text-align: center;
-    }
-    
-    .message {
-        text-align: center;
-        font-size: 14px;
-        color: green;
-    }
-    
-    .error-message {
-        text-align: center;
-        font-size: 14px;
-        color: red;
-    }
-    
+}
+
+.button-container {
+    text-align: center;
+}
+
+.message {
+    text-align: center;
+    font-size: 14px;
+    color: green;
+}
+
+.error-message {
+    text-align: center;
+    font-size: 14px;
+    color: red;
+}

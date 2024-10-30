@@ -56,14 +56,11 @@ const Form: React.FC = () => {
         try {
             const response = await api.post<boolean>('/notification/send', payload);
             setRefreshLogHistory(!refreshLogHistory); // Refresh LogHistory
-            /*
-            if (response.data) {
-                setResponseMessage('Notification sent successfully!');
-                setRefreshLogHistory(!refreshLogHistory); // Refresh LogHistory
-            } else {
-                setResponseMessage('Failed to send notification.');
-            }
-                */
+            setCategory(0);
+            setUserId(0);
+            setUserName('');
+            setCategoryName('');
+            setContent('');
         } catch (error) {
             setResponseMessage('Error sending notification.');
             console.error('Error:', error);
@@ -80,6 +77,16 @@ const Form: React.FC = () => {
         setUserName(user.userName);
     };
 
+    const handleContentChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+        const maxLength = 65535;
+        if (e.target.value.length <= maxLength) {
+            setContent(e.target.value);
+        } else {
+            setResponseMessage('Limit characters exceed');
+        }
+    };
+    
+
     return (
         <div className="form-container">
             <h1 className="form-header">Send Notification</h1>
@@ -94,7 +101,7 @@ const Form: React.FC = () => {
                     className="textarea"
                     placeholder="Message Content"
                     value={content}
-                    onChange={(e) => setContent(e.target.value)}
+                    onChange={handleContentChange}
                 ></textarea>
             </div>
             <div className="button-container">

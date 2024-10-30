@@ -64,8 +64,8 @@ const LogHistory: React.FC<LogHistoryProps> = ({ refresh }) => {
             <table className='log-table'>
                 <thead>
                     <tr>
-                        <th>UserName</th>
-                        <th>Category</th>
+                        <th>User Name</th>
+                        <th>Subscribed</th>
                         <th>Channel</th>
                         <th>Content</th>
                         <th>Sent At</th>
