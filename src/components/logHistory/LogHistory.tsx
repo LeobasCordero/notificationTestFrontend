@@ -68,6 +68,7 @@ const LogHistory: React.FC<LogHistoryProps> = ({ refresh }) => {
                         <th>Subscribed</th>
                         <th>Channel</th>
                         <th>Content</th>
+                        <th>Status</th>
                         <th>Sent At</th>
                     </tr>
                 </thead>
@@ -78,6 +79,7 @@ const LogHistory: React.FC<LogHistoryProps> = ({ refresh }) => {
                             <td>{message.categoryName}</td>
                             <td>{message.channelName}</td>
                             <td>{message.content}</td>
+                            <td>{message.status}</td>
                             <td>{formatDateForDisplay(formatDateArray(message.sentAt))}</td>
                         </tr>
                     ))}

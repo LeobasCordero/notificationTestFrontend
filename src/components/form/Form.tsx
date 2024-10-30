@@ -55,12 +55,12 @@ const Form: React.FC = () => {
 
         try {
             const response = await api.post<boolean>('/notification/send', payload);
-            setRefreshLogHistory(!refreshLogHistory); // Refresh LogHistory
             setCategory(0);
             setUserId(0);
             setUserName('');
             setCategoryName('');
             setContent('');
+            setRefreshLogHistory(!refreshLogHistory);
         } catch (error) {
             setResponseMessage('Error sending notification.');
             console.error('Error:', error);

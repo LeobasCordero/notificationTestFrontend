@@ -38,8 +38,8 @@ const UserSelect: React.FC<UserSelectProps> = ({ onChangeUser }) => {
         <div className="user-select">
             <select id="userSelect" value={selectedUser} onChange={handleSelectChange}>
                 <option value="">Select User</option>
-                {users.map((user, index) => (
-                    <option key={index} value={user.userId}>
+                {users.map((user) => (
+                    <option key={user.userId} value={user.userId}>
                         {user.userName}
                     </option>
                 ))}
