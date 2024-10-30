@@ -1,29 +1,54 @@
-.form {
-    max-width: 400px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
+/*.form {
+    background-color: aquamarine;
+    color: var(--primary-text-color);
+}
 
-    select,
-    textarea {
-        width: 100%;
+.send-button {
+    background-color: var(--button-bg-color);
+}
+    */
+
+    .form-container {
+        background-color: #f8f9fa;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        max-width: 600px;
+        margin: 0 auto;
+    }
+    
+    .form-header {
+        color: #333;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+    
+    .form-group {
         margin-bottom: 15px;
+    }
+    
+    .textarea {
+        width: 100%;
         padding: 10px;
         border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 16px;
+        resize: none;
     }
-
-    button {
-        @include flex-center;
-        width: 100%;
-        padding: 10px;
-        background-color: $primary-color;
-        color: #fff;
-        border: none;
-        cursor: pointer;
-
-        &:hover {
-            background-color: darken($primary-color, 10%);
-        }
+    
+    .button-container {
+        text-align: center;
     }
-}
+    
+    .message {
+        text-align: center;
+        font-size: 14px;
+        color: green;
+    }
+    
+    .error-message {
+        text-align: center;
+        font-size: 14px;
+        color: red;
+    }
+    

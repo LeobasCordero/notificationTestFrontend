@@ -81,22 +81,35 @@ const Form: React.FC = () => {
     };
 
     return (
-        <div>
-            <h1>Send Notification</h1>
-            <UserSelect onChangeUser={handleUserChange} />
-            <CategorySelect onCategoryChange={handleCategoryChange} userId={userId} />
-            <textarea
-                placeholder="Message Content"
-                value={content}
-                onChange={(e) => setContent(e.target.value)}
-            ></textarea>
-            <SendButton
-                onClick={handleSend}
-                disabled={userId === 0 || categoryId === 0 || content.trim() === ''}
-            />
-            {responseMessage && <p>{responseMessage}</p>}
+        <div className="form-container">
+            <h1 className="form-header">Send Notification</h1>
+            <div className="form-group">
+                <UserSelect onChangeUser={handleUserChange} />
+            </div>
+            <div className="form-group">
+                <CategorySelect onCategoryChange={handleCategoryChange} userId={userId} />
+            </div>
+            <div className="form-group">
+                <textarea
+                    className="textarea"
+                    placeholder="Message Content"
+                    value={content}
+                    onChange={(e) => setContent(e.target.value)}
+                ></textarea>
+            </div>
+            <div className="button-container">
+                <SendButton
+                    onClick={handleSend}
+                    disabled={userId === 0 || categoryId === 0 || content.trim() === ''}
+                />
+            </div>
+            {responseMessage && (
+                <p className={responseMessage.includes('Error') ? 'error-message' : 'message'}>
+                    {responseMessage}
+                </p>
+            )}
             <LogHistory refresh={refreshLogHistory} />
-        </div>
+    </div>
     );
 };
 

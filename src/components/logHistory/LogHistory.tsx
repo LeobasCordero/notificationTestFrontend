@@ -35,7 +35,7 @@ const LogHistory: React.FC<LogHistoryProps> = ({ refresh }) => {
     }
 
     return (
-        <div>
+        <div className='log-history'>
             <h1>Log History</h1>
             <ul>
                 {messages.map((message, index) => (

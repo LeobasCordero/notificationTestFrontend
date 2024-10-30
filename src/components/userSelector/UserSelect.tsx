@@ -35,7 +35,7 @@ const UserSelect: React.FC<UserSelectProps> = ({ onChangeUser }) => {
 
 
     return (
-        <div>
+        <div className="user-select">
             <label htmlFor="userSelect">User:</label>
             <select id="userSelect" value={selectedUser} onChange={handleSelectChange}>
                 <option value="">Select User</option>
