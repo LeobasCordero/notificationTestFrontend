@@ -3,5 +3,5 @@ export default interface Message {
     categoryName: string;
     channelName: string;
     content: string;
-    sentAt: string;
+    sentAt: number[];
 }
