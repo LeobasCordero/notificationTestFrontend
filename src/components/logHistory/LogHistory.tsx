@@ -1,15 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import api from '../../services/api';
+import Message from '../../models/Message';
 
-interface Message {
-    userName: string;
-    categoryName: string;
-    channelName: string;
-    content: string;
-    sentAt: string;
+interface LogHistoryProps {
+    refresh: boolean;
 }
 
-const LogHistory: React.FC = () => {
+const LogHistory: React.FC<LogHistoryProps> = ({ refresh }) => {
     const [messages, setMessages] = useState<Message[]>([]);
     const [loading, setLoading] = useState<boolean>(true);
     const [error, setError] = useState<string | null>(null);
@@ -26,9 +23,8 @@ const LogHistory: React.FC = () => {
                 setLoading(false);
             }
         };
-
         fetchMessages();
-    }, []);
+    }, [refresh]); // Add refresh to dependency array
 
     if (loading) {
         return <div>Loading...</div>;
